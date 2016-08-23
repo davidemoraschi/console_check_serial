@@ -1,0 +1,640 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (7a7a3002).
+//
+// c:\develop\console_check_serial\console_check_serial\debug\sport.tli
+//
+// Wrapper implementations for Win32 type library sport.dll
+// compiler-generated file created 04/18/12 at 21:24:39 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _ISPortAxEvents wrapper method implementations
+//
+
+inline HRESULT _ISPortAxEvents::OnRxChar ( long lCount ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003", lCount);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnCTS ( VARIANT_BOOL bCts ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x000b", bCts);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnDSR ( VARIANT_BOOL bDsr ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x000b", bDsr);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnRing ( VARIANT_BOOL bRing ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x000b", bRing);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnBreak ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnDCD ( VARIANT_BOOL bDcd ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x000b", bDcd);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnTxEmpty ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnRxFlag ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnCommEvent ( long lEvent ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003", lEvent);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnCommError ( long lError ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003", lError);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnLatencyExpiry ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnPortAdded ( _bstr_t Name ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0xc, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008", (BSTR)Name);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnPortRemoved ( _bstr_t Name ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0xd, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008", (BSTR)Name);
+    return _result;
+}
+
+inline HRESULT _ISPortAxEvents::OnChangePortsList ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0xe, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+//
+// interface ISPortAx wrapper method implementations
+//
+
+inline VARIANT_BOOL ISPortAx::Open ( _bstr_t Port ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Open(Port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::Close ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_Close(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::Read ( unsigned char * Buf, long * Count ) {
+    long _result = 0;
+    HRESULT _hr = raw_Read(Buf, Count, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::Write ( unsigned char * Buf, long Count ) {
+    long _result = 0;
+    HRESULT _hr = raw_Write(Buf, Count, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ISPortAx::ReadStr ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_ReadStr(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long ISPortAx::WriteStr ( _bstr_t String ) {
+    long _result = 0;
+    HRESULT _hr = raw_WriteStr(String, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::PurgeQueue ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_PurgeQueue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetHandle ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Handle(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::GetIsOpened ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsOpened(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutDTR ( VARIANT_BOOL _arg1 ) {
+    HRESULT _hr = put_DTR(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline void ISPortAx::PutRTS ( VARIANT_BOOL _arg1 ) {
+    HRESULT _hr = put_RTS(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetInCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_InCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline unsigned char ISPortAx::GetDatabits ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_Databits(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutDatabits ( unsigned char pVal ) {
+    HRESULT _hr = put_Databits(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetMonitorEvents ( ) {
+    long _result = 0;
+    HRESULT _hr = get_MonitorEvents(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutMonitorEvents ( long pVal ) {
+    HRESULT _hr = put_MonitorEvents(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetParity ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_Parity(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutParity ( unsigned char pVal ) {
+    HRESULT _hr = put_Parity(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISPortAx::GetCTS ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_CTS(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::GetDSR ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_DSR(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline unsigned char ISPortAx::GetStopBits ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_StopBits(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutStopBits ( unsigned char pVal ) {
+    HRESULT _hr = put_StopBits(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetHandShake ( ) {
+    long _result = 0;
+    HRESULT _hr = get_HandShake(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutHandShake ( long pVal ) {
+    HRESULT _hr = put_HandShake(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetFlowReplace ( ) {
+    long _result = 0;
+    HRESULT _hr = get_FlowReplace(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutFlowReplace ( long pVal ) {
+    HRESULT _hr = put_FlowReplace(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetXOnLimit ( ) {
+    long _result = 0;
+    HRESULT _hr = get_XOnLimit(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutXOnLimit ( long pVal ) {
+    HRESULT _hr = put_XOnLimit(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetXOffLimit ( ) {
+    long _result = 0;
+    HRESULT _hr = get_XOffLimit(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutXOffLimit ( long pVal ) {
+    HRESULT _hr = put_XOffLimit(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharEof ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharEof(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharEof ( unsigned char pVal ) {
+    HRESULT _hr = put_CharEof(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharError ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharError ( unsigned char pVal ) {
+    HRESULT _hr = put_CharError(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharBreak ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharBreak(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharBreak ( unsigned char pVal ) {
+    HRESULT _hr = put_CharBreak(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharEvent ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharEvent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharEvent ( unsigned char pVal ) {
+    HRESULT _hr = put_CharEvent(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharXOn ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharXOn(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharXOn ( unsigned char pVal ) {
+    HRESULT _hr = put_CharXOn(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned char ISPortAx::GetCharXOff ( ) {
+    unsigned char _result = 0;
+    HRESULT _hr = get_CharXOff(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutCharXOff ( unsigned char pVal ) {
+    HRESULT _hr = put_CharXOff(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetOutCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_OutCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetBaudRate ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BaudRate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutBaudRate ( long pVal ) {
+    HRESULT _hr = put_BaudRate(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetInBufferSize ( ) {
+    long _result = 0;
+    HRESULT _hr = get_InBufferSize(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutInBufferSize ( long pVal ) {
+    HRESULT _hr = put_InBufferSize(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetOutBufferSize ( ) {
+    long _result = 0;
+    HRESULT _hr = get_OutBufferSize(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutOutBufferSize ( long pVal ) {
+    HRESULT _hr = put_OutBufferSize(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline void ISPortAx::PutBreak ( VARIANT_BOOL _arg1 ) {
+    HRESULT _hr = put_Break(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetTimeoutReadInterval ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TimeoutReadInterval(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutTimeoutReadInterval ( long pVal ) {
+    HRESULT _hr = put_TimeoutReadInterval(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetTimeoutReadTotalMultiplier ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TimeoutReadTotalMultiplier(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutTimeoutReadTotalMultiplier ( long pVal ) {
+    HRESULT _hr = put_TimeoutReadTotalMultiplier(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetTimeoutReadTotalConstant ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TimeoutReadTotalConstant(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutTimeoutReadTotalConstant ( long pVal ) {
+    HRESULT _hr = put_TimeoutReadTotalConstant(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetTimeoutWriteTotalMultiplier ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TimeoutWriteTotalMultiplier(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutTimeoutWriteTotalMultiplier ( long pVal ) {
+    HRESULT _hr = put_TimeoutWriteTotalMultiplier(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetTimeoutWriteTotalConstant ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TimeoutWriteTotalConstant(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutTimeoutWriteTotalConstant ( long pVal ) {
+    HRESULT _hr = put_TimeoutWriteTotalConstant(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISPortAx::GetDCD ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_DCD(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ISPortAx::InitString ( _bstr_t String ) {
+    HRESULT _hr = raw_InitString(String);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long ISPortAx::GetCountPorts ( ) {
+    long _result = 0;
+    HRESULT _hr = get_CountPorts(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ISPortAx::GetPortName ( long iNumber ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetPortName(iNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t ISPortAx::ReadVariant ( long Count ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_ReadVariant(Count, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long ISPortAx::WriteVariant ( const _variant_t & Data ) {
+    long _result = 0;
+    HRESULT _hr = raw_WriteVariant(Data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::GetBlockMode ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_BlockMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutBlockMode ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_BlockMode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISPortAx::GetMaxOutQueue ( ) {
+    long _result = 0;
+    HRESULT _hr = get_MaxOutQueue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetMaxInQueue ( ) {
+    long _result = 0;
+    HRESULT _hr = get_MaxInQueue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetMaxBaud ( ) {
+    long _result = 0;
+    HRESULT _hr = get_MaxBaud(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetProvSubType ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ProvSubType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetProvCapabilities ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ProvCapabilities(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetSettableParams ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SettableParams(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetSettableData ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SettableData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ISPortAx::GetSettableStopParity ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SettableStopParity(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ISPortAx::GetFullDeviceName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_FullDeviceName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT ISPortAx::SetXon ( ) {
+    HRESULT _hr = raw_SetXon();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISPortAx::SetXoff ( ) {
+    HRESULT _hr = raw_SetXoff();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ISPortAx::GetRING ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_RING(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISPortAx::PortIsAvailable ( _bstr_t Port ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_PortIsAvailable(Port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ISPortAx::SetLatencyExpiry ( long MSecs ) {
+    HRESULT _hr = raw_SetLatencyExpiry(MSecs);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ISPortAx::GetEnableAutoDetectPorts ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_EnableAutoDetectPorts(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISPortAx::PutEnableAutoDetectPorts ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_EnableAutoDetectPorts(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}

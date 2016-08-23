@@ -1,0 +1,492 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (7a7a3002).
+//
+// c:\develop\console_check_serial\console_check_serial\debug\sport.tlh
+//
+// C++ source equivalent of Win32 type library sport.dll
+// compiler-generated file created 04/18/12 at 21:24:39 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace SPortLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("f8e4294a-18df-4cb8-8967-abe5fd4d18b3"))
+/* LIBID */ __SPortLib;
+struct __declspec(uuid("2fd15ea0-bbcd-4998-8679-12d6a16c25b9"))
+/* dispinterface */ _ISPortAxEvents;
+struct /* coclass */ SPortAx;
+struct __declspec(uuid("2431a5ed-b203-4b48-b541-c6ec7aa34192"))
+/* dual interface */ ISPortAx;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_ISPortAxEvents, __uuidof(_ISPortAxEvents));
+_COM_SMARTPTR_TYPEDEF(ISPortAx, __uuidof(ISPortAx));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("2fd15ea0-bbcd-4998-8679-12d6a16c25b9"))
+_ISPortAxEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnRxChar (
+        long lCount );
+    HRESULT OnCTS (
+        VARIANT_BOOL bCts );
+    HRESULT OnDSR (
+        VARIANT_BOOL bDsr );
+    HRESULT OnRing (
+        VARIANT_BOOL bRing );
+    HRESULT OnBreak ( );
+    HRESULT OnDCD (
+        VARIANT_BOOL bDcd );
+    HRESULT OnTxEmpty ( );
+    HRESULT OnRxFlag ( );
+    HRESULT OnCommEvent (
+        long lEvent );
+    HRESULT OnCommError (
+        long lError );
+    HRESULT OnLatencyExpiry ( );
+    HRESULT OnPortAdded (
+        _bstr_t Name );
+    HRESULT OnPortRemoved (
+        _bstr_t Name );
+    HRESULT OnChangePortsList ( );
+};
+
+struct __declspec(uuid("14e95046-bec7-46d2-b9e3-74b1ad14ac65"))
+SPortAx;
+    // [ default ] interface ISPortAx
+    // [ default, source ] dispinterface _ISPortAxEvents
+
+struct __declspec(uuid("2431a5ed-b203-4b48-b541-c6ec7aa34192"))
+ISPortAx : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetHandle))
+    long Handle;
+    __declspec(property(get=GetIsOpened))
+    VARIANT_BOOL IsOpened;
+    __declspec(property(put=PutDTR))
+    VARIANT_BOOL DTR;
+    __declspec(property(put=PutRTS))
+    VARIANT_BOOL RTS;
+    __declspec(property(get=GetInCount))
+    long InCount;
+    __declspec(property(get=GetDatabits,put=PutDatabits))
+    unsigned char Databits;
+    __declspec(property(get=GetMonitorEvents,put=PutMonitorEvents))
+    long MonitorEvents;
+    __declspec(property(get=GetParity,put=PutParity))
+    unsigned char Parity;
+    __declspec(property(get=GetCTS))
+    VARIANT_BOOL CTS;
+    __declspec(property(get=GetDSR))
+    VARIANT_BOOL DSR;
+    __declspec(property(get=GetStopBits,put=PutStopBits))
+    unsigned char StopBits;
+    __declspec(property(get=GetHandShake,put=PutHandShake))
+    long HandShake;
+    __declspec(property(get=GetFlowReplace,put=PutFlowReplace))
+    long FlowReplace;
+    __declspec(property(get=GetXOnLimit,put=PutXOnLimit))
+    long XOnLimit;
+    __declspec(property(get=GetXOffLimit,put=PutXOffLimit))
+    long XOffLimit;
+    __declspec(property(get=GetCharEof,put=PutCharEof))
+    unsigned char CharEof;
+    __declspec(property(get=GetCharError,put=PutCharError))
+    unsigned char CharError;
+    __declspec(property(get=GetCharBreak,put=PutCharBreak))
+    unsigned char CharBreak;
+    __declspec(property(get=GetCharEvent,put=PutCharEvent))
+    unsigned char CharEvent;
+    __declspec(property(get=GetCharXOn,put=PutCharXOn))
+    unsigned char CharXOn;
+    __declspec(property(get=GetCharXOff,put=PutCharXOff))
+    unsigned char CharXOff;
+    __declspec(property(get=GetOutCount))
+    long OutCount;
+    __declspec(property(get=GetBaudRate,put=PutBaudRate))
+    long BaudRate;
+    __declspec(property(get=GetInBufferSize,put=PutInBufferSize))
+    long InBufferSize;
+    __declspec(property(get=GetOutBufferSize,put=PutOutBufferSize))
+    long OutBufferSize;
+    __declspec(property(put=PutBreak))
+    VARIANT_BOOL Break;
+    __declspec(property(get=GetTimeoutReadInterval,put=PutTimeoutReadInterval))
+    long TimeoutReadInterval;
+    __declspec(property(get=GetTimeoutReadTotalMultiplier,put=PutTimeoutReadTotalMultiplier))
+    long TimeoutReadTotalMultiplier;
+    __declspec(property(get=GetTimeoutReadTotalConstant,put=PutTimeoutReadTotalConstant))
+    long TimeoutReadTotalConstant;
+    __declspec(property(get=GetTimeoutWriteTotalMultiplier,put=PutTimeoutWriteTotalMultiplier))
+    long TimeoutWriteTotalMultiplier;
+    __declspec(property(get=GetTimeoutWriteTotalConstant,put=PutTimeoutWriteTotalConstant))
+    long TimeoutWriteTotalConstant;
+    __declspec(property(get=GetDCD))
+    VARIANT_BOOL DCD;
+    __declspec(property(get=GetCountPorts))
+    long CountPorts;
+    __declspec(property(get=GetBlockMode,put=PutBlockMode))
+    VARIANT_BOOL BlockMode;
+    __declspec(property(get=GetMaxOutQueue))
+    long MaxOutQueue;
+    __declspec(property(get=GetMaxInQueue))
+    long MaxInQueue;
+    __declspec(property(get=GetMaxBaud))
+    long MaxBaud;
+    __declspec(property(get=GetProvSubType))
+    long ProvSubType;
+    __declspec(property(get=GetProvCapabilities))
+    long ProvCapabilities;
+    __declspec(property(get=GetSettableParams))
+    long SettableParams;
+    __declspec(property(get=GetSettableData))
+    long SettableData;
+    __declspec(property(get=GetSettableStopParity))
+    long SettableStopParity;
+    __declspec(property(get=GetFullDeviceName))
+    _bstr_t FullDeviceName;
+    __declspec(property(get=GetRING))
+    VARIANT_BOOL RING;
+    __declspec(property(get=GetEnableAutoDetectPorts,put=PutEnableAutoDetectPorts))
+    VARIANT_BOOL EnableAutoDetectPorts;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL Open (
+        _bstr_t Port );
+    VARIANT_BOOL Close ( );
+    long Read (
+        unsigned char * Buf,
+        long * Count );
+    long Write (
+        unsigned char * Buf,
+        long Count );
+    _bstr_t ReadStr ( );
+    long WriteStr (
+        _bstr_t String );
+    VARIANT_BOOL PurgeQueue ( );
+    long GetHandle ( );
+    VARIANT_BOOL GetIsOpened ( );
+    void PutDTR (
+        VARIANT_BOOL _arg1 );
+    void PutRTS (
+        VARIANT_BOOL _arg1 );
+    long GetInCount ( );
+    unsigned char GetDatabits ( );
+    void PutDatabits (
+        unsigned char pVal );
+    long GetMonitorEvents ( );
+    void PutMonitorEvents (
+        long pVal );
+    unsigned char GetParity ( );
+    void PutParity (
+        unsigned char pVal );
+    VARIANT_BOOL GetCTS ( );
+    VARIANT_BOOL GetDSR ( );
+    unsigned char GetStopBits ( );
+    void PutStopBits (
+        unsigned char pVal );
+    long GetHandShake ( );
+    void PutHandShake (
+        long pVal );
+    long GetFlowReplace ( );
+    void PutFlowReplace (
+        long pVal );
+    long GetXOnLimit ( );
+    void PutXOnLimit (
+        long pVal );
+    long GetXOffLimit ( );
+    void PutXOffLimit (
+        long pVal );
+    unsigned char GetCharEof ( );
+    void PutCharEof (
+        unsigned char pVal );
+    unsigned char GetCharError ( );
+    void PutCharError (
+        unsigned char pVal );
+    unsigned char GetCharBreak ( );
+    void PutCharBreak (
+        unsigned char pVal );
+    unsigned char GetCharEvent ( );
+    void PutCharEvent (
+        unsigned char pVal );
+    unsigned char GetCharXOn ( );
+    void PutCharXOn (
+        unsigned char pVal );
+    unsigned char GetCharXOff ( );
+    void PutCharXOff (
+        unsigned char pVal );
+    long GetOutCount ( );
+    long GetBaudRate ( );
+    void PutBaudRate (
+        long pVal );
+    long GetInBufferSize ( );
+    void PutInBufferSize (
+        long pVal );
+    long GetOutBufferSize ( );
+    void PutOutBufferSize (
+        long pVal );
+    void PutBreak (
+        VARIANT_BOOL _arg1 );
+    long GetTimeoutReadInterval ( );
+    void PutTimeoutReadInterval (
+        long pVal );
+    long GetTimeoutReadTotalMultiplier ( );
+    void PutTimeoutReadTotalMultiplier (
+        long pVal );
+    long GetTimeoutReadTotalConstant ( );
+    void PutTimeoutReadTotalConstant (
+        long pVal );
+    long GetTimeoutWriteTotalMultiplier ( );
+    void PutTimeoutWriteTotalMultiplier (
+        long pVal );
+    long GetTimeoutWriteTotalConstant ( );
+    void PutTimeoutWriteTotalConstant (
+        long pVal );
+    VARIANT_BOOL GetDCD ( );
+    HRESULT InitString (
+        _bstr_t String );
+    long GetCountPorts ( );
+    _bstr_t GetPortName (
+        long iNumber );
+    _variant_t ReadVariant (
+        long Count );
+    long WriteVariant (
+        const _variant_t & Data );
+    VARIANT_BOOL GetBlockMode ( );
+    void PutBlockMode (
+        VARIANT_BOOL pVal );
+    long GetMaxOutQueue ( );
+    long GetMaxInQueue ( );
+    long GetMaxBaud ( );
+    long GetProvSubType ( );
+    long GetProvCapabilities ( );
+    long GetSettableParams ( );
+    long GetSettableData ( );
+    long GetSettableStopParity ( );
+    _bstr_t GetFullDeviceName ( );
+    HRESULT SetXon ( );
+    HRESULT SetXoff ( );
+    VARIANT_BOOL GetRING ( );
+    VARIANT_BOOL PortIsAvailable (
+        _bstr_t Port );
+    HRESULT SetLatencyExpiry (
+        long MSecs );
+    VARIANT_BOOL GetEnableAutoDetectPorts ( );
+    void PutEnableAutoDetectPorts (
+        VARIANT_BOOL pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Open (
+        /*[in]*/ BSTR Port,
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Close (
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Read (
+        /*[out]*/ unsigned char * Buf,
+        /*[out]*/ long * Count,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_Write (
+        /*[in]*/ unsigned char * Buf,
+        /*[in]*/ long Count,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ReadStr (
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_WriteStr (
+        /*[in]*/ BSTR String,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_PurgeQueue (
+        /*[out,retval]*/ VARIANT_BOOL * retVal ) = 0;
+      virtual HRESULT __stdcall get_Handle (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_IsOpened (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall put_DTR (
+        /*[in]*/ VARIANT_BOOL _arg1 ) = 0;
+      virtual HRESULT __stdcall put_RTS (
+        /*[in]*/ VARIANT_BOOL _arg1 ) = 0;
+      virtual HRESULT __stdcall get_InCount (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_Databits (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_Databits (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_MonitorEvents (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_MonitorEvents (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_Parity (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_Parity (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CTS (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_DSR (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_StopBits (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_StopBits (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_HandShake (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_HandShake (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_FlowReplace (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_FlowReplace (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_XOnLimit (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_XOnLimit (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_XOffLimit (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_XOffLimit (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_CharEof (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharEof (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CharError (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharError (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CharBreak (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharBreak (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CharEvent (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharEvent (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CharXOn (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharXOn (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_CharXOff (
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall put_CharXOff (
+        /*[in]*/ unsigned char pVal ) = 0;
+      virtual HRESULT __stdcall get_OutCount (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_BaudRate (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_BaudRate (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_InBufferSize (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_InBufferSize (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_OutBufferSize (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_OutBufferSize (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall put_Break (
+        /*[in]*/ VARIANT_BOOL _arg1 ) = 0;
+      virtual HRESULT __stdcall get_TimeoutReadInterval (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_TimeoutReadInterval (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_TimeoutReadTotalMultiplier (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_TimeoutReadTotalMultiplier (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_TimeoutReadTotalConstant (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_TimeoutReadTotalConstant (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_TimeoutWriteTotalMultiplier (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_TimeoutWriteTotalMultiplier (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_TimeoutWriteTotalConstant (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_TimeoutWriteTotalConstant (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_DCD (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_InitString (
+        /*[in]*/ BSTR String ) = 0;
+      virtual HRESULT __stdcall get_CountPorts (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetPortName (
+        long iNumber,
+        /*[out,retval]*/ BSTR * retVal ) = 0;
+      virtual HRESULT __stdcall raw_ReadVariant (
+        /*[in]*/ long Count,
+        /*[out,retval]*/ VARIANT * Data ) = 0;
+      virtual HRESULT __stdcall raw_WriteVariant (
+        /*[in]*/ VARIANT Data,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_BlockMode (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall put_BlockMode (
+        /*[in]*/ VARIANT_BOOL pVal ) = 0;
+      virtual HRESULT __stdcall get_MaxOutQueue (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_MaxInQueue (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_MaxBaud (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_ProvSubType (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_ProvCapabilities (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_SettableParams (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_SettableData (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_SettableStopParity (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_FullDeviceName (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall raw_SetXon ( ) = 0;
+      virtual HRESULT __stdcall raw_SetXoff ( ) = 0;
+      virtual HRESULT __stdcall get_RING (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_PortIsAvailable (
+        /*[in]*/ BSTR Port,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_SetLatencyExpiry (
+        /*[in]*/ long MSecs ) = 0;
+      virtual HRESULT __stdcall get_EnableAutoDetectPorts (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall put_EnableAutoDetectPorts (
+        /*[in]*/ VARIANT_BOOL pVal ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\develop\console_check_serial\console_check_serial\debug\sport.tli"
+
+} // namespace SPortLib
+
+#pragma pack(pop)
